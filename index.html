@@ -4,14 +4,32 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./public/styles/style.css">
+        <link rel="stylesheet" href="./public/styles/header.css">
         <title>Pacman</title>
     </head>
     
     <body>
         
-        <div class="container">
-            <img src="./public/assets/img/pacman.png" alt="Pacman">
+        <div>
+            <img class="background" src="./public/assets/img/fondo-pacman.jpg">
         </div>
+
+        <audio controls autoplay>
+            <source src="./public/assets/fonts/cancion-pacman.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+
+        <header class="logocontainer">
+            <img src="./public/assets/logos/pac-man-logo.png" alt="Logo pacman" class="logopac">
+            <img src="./public/assets/logos/pac-man-logo-letras.png" alt="Letras pacman" class="letrapac">
+        </header>
+
+        <p><img class="logopac"><img class="letrapac">Pacman</p>
+
+        <section class="centered">
+            <img src="./public/assets/img/pacman.png" alt="Pacman">
+            <img src="./public/assets/img/fantasma.png" alt="Fantasma">
+        </section>
     
     </body>
     

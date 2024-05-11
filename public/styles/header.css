@@ -1,0 +1,7 @@
+.background {
+    background-image: url("fondo-pacman.jpg"); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-width: 100%;
+  }
