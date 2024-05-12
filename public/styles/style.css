@@ -1,32 +1,7 @@
-.centered {
-    display: flex;
-    justify-content: center;
-    height: 100px;
-    width: 100px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-  } 
-
-.logocontainer {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; 
-  }
-
-.logopac {
-    height: 200px;
-    margin-bottom: 90%;
-  }
-
-.letrapac { 
-    height: 300px;
-  }
-  
-img.logopac {
-    float: left;
-  }
-  
-img.letrapac {
-    float: right;
+body {
+    background-image: url("./fondo-pacman.jpg"); 
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
   }
