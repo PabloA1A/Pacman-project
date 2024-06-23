@@ -1,17 +1,67 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const pacman = document.getElementById('pacman');
-    const ghost = document.getElementById('ghost');
+    const pacman = document.getElementById('pacman')
+    const ghostsContainer = document.getElementById('ghosts-container')
 
-    ghost.addEventListener('click', () => {
-        const pacmanWidth = pacman.clientWidth;
-        const pacmanHeight = pacman.clientHeight;
+    function createGhost() {
+        const ghost = document.createElement('img')
+        ghost.src = './public/assets/img/fantasma.png'
+        ghost.alt = 'Ghost'
+        ghost.className = 'imgfan'
 
-        ghost.style.display = 'none';
+        randomPosition(ghost);
 
-        pacman.style.position = 'absolute';
-        pacman.style.top = ghost.style.top;
-        pacman.style.left = ghost.style.left;
-        pacman.style.width = pacmanWidth + 'px'; 
-        pacman.style.height = pacmanHeight + 'px'; 
+        ghost.addEventListener('click', () => {
+            movePacmanToGhost(ghost)
+            ghost.style.display = 'none'
+        });
+        ghostsContainer.appendChild(ghost)
+    }
+
+    function movePacmanToGhost(ghost) {
+        const ghostRect = ghost.getBoundingClientRect()
+        const ghostTop = ghostRect.top + window.scrollY
+        const ghostLeft = ghostRect.left + window.scrollX
+
+        pacman.style.position = 'absolute'
+        pacman.style.top = ghostTop + 'px'
+        pacman.style.left = ghostLeft + 'px'
+        pacman.style.display = 'block'
+    }
+
+    function randomPosition(element) {
+        const randomTop = Math.random() * (window.innerHeight - 50) + 'px'
+        const randomLeft = Math.random() * (window.innerWidth - 50) + 'px'
+        
+        element.style.position = 'absolute'
+        element.style.top = randomTop
+        element.style.left = randomLeft
+    }
+    setInterval(createGhost, 2000);
+});
+
+
+$(document).ready(function () {
+
+    var imagen1 = $("<img>", {id: "img1", src: "imatge1.jpg", title: 'imagen1', height: "300", width : "600"});
+      $(imagen1).css("display","none");
+    var imagen2 = $("<img>", {id: "img2", src: "imatge2.jpg", title: 'imagen2', height: "300", width : "600"});
+
+    $("#resultat").append(imagen1);
+    $("#resultat").append(imagen2);
+
+    $("#boto1").click (function () {
+     /* $("#img2").fadeOut();
+    }, function () {
+      $("#img1").fadeIn();*/
+      
+      $('img').toggle();
+    });
+
+    $("#boto2").click (function () {
+    
+    });
+
+    $("#resultat img").dblclick (function () {
+     
     });
 });
