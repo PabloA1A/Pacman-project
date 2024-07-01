@@ -2,7 +2,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const pacmanContainer = document.getElementById('pacman-container')
     const ghostsContainer = document.getElementById('ghosts-container')
     const cherryContainer = document.getElementById('cherry-container')
-        
+    const scoreboard = document.getElementById('score')
+
+    let score = 0
+    let ghostCount = 0
+    let ghostsEaten = 0
+
+    function updateScore(points) {
+        score += points
+        scoreboard.textContent = score.toString().padStart(4, '0')
+    }
+
     function createPacman() {
         const pacman = document.createElement('img')
         pacman.src = './public/assets/img/pacman.png'
@@ -13,24 +23,22 @@ document.addEventListener("DOMContentLoaded", () => {
         return pacman
     }
 
-    let ghostsEaten = 0;
-
     function createGhost() {
         const ghost = document.createElement('img')
         ghost.src = './public/assets/img/fantasma.png'
-        ghost.alt = 'Ghost';
+        ghost.alt = 'Ghost'
         ghost.className = 'imgfan'
 
         randomPosition(ghost)
 
         ghost.addEventListener('click', () => {
-            movePacmanToElement(ghost)
+            movePacmanToElement(ghost, 100)
             ghost.remove()
             ghostsEaten++
             if (ghostsEaten % 3 === 0) {
                 createCherry()
             }
-        });
+        })
 
         ghostsContainer.appendChild(ghost)
     }
@@ -44,17 +52,17 @@ document.addEventListener("DOMContentLoaded", () => {
         randomPosition(cherry)
 
         cherry.addEventListener('click', () => {
-            movePacmanToElement(cherry)
+            movePacmanToElement(cherry, 500)
             cherry.remove()
-        });
+        })
 
         cherryContainer.appendChild(cherry)
     }
 
-    function movePacmanToElement(element) {
+    function movePacmanToElement(element, points) {
         const elementRect = element.getBoundingClientRect()
         const pacman = createPacman()
-    
+
         pacman.style.position = 'absolute'
         pacman.style.top = elementRect.top + 'px'
         pacman.style.left = elementRect.left + 'px'
@@ -64,14 +72,15 @@ document.addEventListener("DOMContentLoaded", () => {
         if (existingPacman) {
             existingPacman.remove()
         }
-    
+
         pacmanContainer.appendChild(pacman)
+        updateScore(points)
     }
 
     function randomPosition(element) {
         const randomTop = Math.random() * (window.innerHeight - 50) + 'px'
         const randomLeft = Math.random() * (window.innerWidth - 50) + 'px'
-        
+
         element.style.position = 'absolute'
         element.style.top = randomTop
         element.style.left = randomLeft
@@ -79,25 +88,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setInterval(createGhost, 2000)
 })
-
-document.addEventListener("DOMContentLoaded", () => {
-    const scoreboard = document.getElementById('score')
-
-    let score = 0
-
-    function updateScore(points) {
-        score += points
-        scoreboard.textContent = score.toString().padStart(4, '0')
-    }
-
-    function createGhost() {
-        movePacmanToGhost();
-        updateScore(100)
-    }
-
-    function movePacmanToGhost() {
-        console.log('Pacman ha comido un fantasma');
-    }
-
-    setInterval(createGhost, 2000);
-});
