@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
         pacman.style.height = '100px'
         return pacman
     }
-    
+
     let ghostsEaten = 0;
 
     function createGhost() {
@@ -78,4 +78,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     setInterval(createGhost, 2000)
+})
+
+document.addEventListener("DOMContentLoaded", () => {
+    
 })
