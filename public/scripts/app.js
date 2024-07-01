@@ -11,10 +11,12 @@ document.addEventListener("DOMContentLoaded", () => {
         randomPosition(ghost);
 
         ghost.addEventListener('click', () => {
+            console.log('Ghost clicked')
             movePacmanToGhost(ghost)
-            ghost.style.display = 'none'
+            ghost.remove()
         });
-        ghostsContainer.appendChild(ghost)
+
+        ghostsContainer.appendChild(ghost);
     }
 
     function movePacmanToGhost(ghost) {
@@ -22,10 +24,14 @@ document.addEventListener("DOMContentLoaded", () => {
         const ghostTop = ghostRect.top + window.scrollY
         const ghostLeft = ghostRect.left + window.scrollX
 
+        console.log('Moving Pacman to:', ghostTop, ghostLeft)
+
         pacman.style.position = 'absolute'
         pacman.style.top = ghostTop + 'px'
         pacman.style.left = ghostLeft + 'px'
         pacman.style.display = 'block'
+
+        console.log('Pacman style:', pacman.style)
     }
 
     function randomPosition(element) {
@@ -36,32 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
         element.style.top = randomTop
         element.style.left = randomLeft
     }
-    setInterval(createGhost, 2000);
-});
 
-
-$(document).ready(function () {
-
-    var imagen1 = $("<img>", {id: "img1", src: "imatge1.jpg", title: 'imagen1', height: "300", width : "600"});
-      $(imagen1).css("display","none");
-    var imagen2 = $("<img>", {id: "img2", src: "imatge2.jpg", title: 'imagen2', height: "300", width : "600"});
-
-    $("#resultat").append(imagen1);
-    $("#resultat").append(imagen2);
-
-    $("#boto1").click (function () {
-     /* $("#img2").fadeOut();
-    }, function () {
-      $("#img1").fadeIn();*/
-      
-      $('img').toggle();
-    });
-
-    $("#boto2").click (function () {
-    
-    });
-
-    $("#resultat img").dblclick (function () {
-     
-    });
+    setInterval(createGhost, 2000)
 });
