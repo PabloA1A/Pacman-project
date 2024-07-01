@@ -81,5 +81,23 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 document.addEventListener("DOMContentLoaded", () => {
-    
-})
+    const scoreboard = document.getElementById('score')
+
+    let score = 0
+
+    function updateScore(points) {
+        score += points
+        scoreboard.textContent = score.toString().padStart(4, '0')
+    }
+
+    function createGhost() {
+        movePacmanToGhost();
+        updateScore(100)
+    }
+
+    function movePacmanToGhost() {
+        console.log('Pacman ha comido un fantasma');
+    }
+
+    setInterval(createGhost, 2000);
+});
