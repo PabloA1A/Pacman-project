@@ -15,10 +15,6 @@ h2 {
   left: 50%;
 }  
 
-.imgfan {
-  margin: 0 100px;
-}  
-
 .logocontainer {
     display: flex;
     justify-content: center;
@@ -40,9 +36,10 @@ h2 {
     margin: 0 600px;
 }
 
+.imgfan,
 .cherry {
-  width: 30px;
-  height: 30px; 
+    width: 100px;
+    height: 100px;
 }
 
 .imgpac {

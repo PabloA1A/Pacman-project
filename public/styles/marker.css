@@ -10,3 +10,18 @@
     border-radius: 5px; 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
 }
+
+#game-over {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    color: red;
+    background-color: black;
+    padding: 20px;
+    border: 3px solid white;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 10000;
+}
