@@ -29,3 +29,4 @@ Pacman already has the power to eat the ghost. When the player clicks on the gho
 https://pabloa1a.github.io/Pacman-project/
 
 ### Images:
+https://i.postimg.cc/bNCXhxQy/Captura-de-pantalla-2024-07-01-a-las-20-05-59.png
