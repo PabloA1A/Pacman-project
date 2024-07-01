@@ -3,7 +3,7 @@ h2 {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: crimson;
   position: absolute;
-  }
+}
 
 .centered {
   display: flex;
@@ -13,9 +13,8 @@ h2 {
   position: absolute;
   top: 50%;
   left: 50%;
-  }  
+}  
 
-.imgpac,
 .imgfan {
   margin: 0 100px;
 }  
@@ -24,25 +23,32 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center; 
-  }
+}
 
 .logopac {
     height: 200px;
     margin-top: 5%;
-  }
+}
 
 .letrapac { 
     height: 300px;
     margin-top: 0%;
-  }
+}
 
 .logopac,
 .letrapac {
     margin: 0 600px;
-  }
+}
 
-#pacman {
-    display: none; 
-    position: absolute;
-    z-index: 1000; 
+.cherry {
+  width: 30px;
+  height: 30px; 
+}
+
+.imgpac {
+  width: 100px; 
+  height: 100px; 
+  position: absolute;
+  z-index: 1000;
+  display: none; 
 }
