@@ -49,3 +49,9 @@ h2 {
   z-index: 1000;
   display: none; 
 }
+
+@media (max-width: 480px) {
+    .logopac, .letrapac {
+        display: none; 
+    }
+}

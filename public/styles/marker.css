@@ -25,3 +25,72 @@
     text-align: center;
     z-index: 10000;
 }
+
+#restart-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 24px;
+    background-color: #00BFFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#restart-button:hover {
+    background-color: #009ACD; 
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    #scoreboard {
+        font-size: 20px;
+        padding: 8px;
+    }
+
+    #game-over {
+        font-size: 36px;
+        padding: 15px;
+    }
+
+    #restart-button {
+        font-size: 20px;
+        padding: 8px 16px;
+    }
+
+    .logopac, .letrapac {
+        height: 150px;
+        margin: 0 20px;
+    }
+
+    .imgfan, .cherry, .imgpac {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    #scoreboard {
+        font-size: 16px;
+        padding: 6px;
+    }
+
+    #game-over {
+        font-size: 28px;
+        padding: 10px;
+    }
+
+    #restart-button {
+        font-size: 16px;
+        padding: 6px 12px;
+    }
+
+    .logopac, .letrapac {
+        display: none; 
+    }
+
+    .imgfan, .cherry, .imgpac {
+        width: 60px;
+        height: 60px;
+    }
+}
